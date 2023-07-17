@@ -26,4 +26,6 @@ export async function createCharacterCard() {
       </dl>
     </div>
   </li>`;
+
+  return newCard;
 }
