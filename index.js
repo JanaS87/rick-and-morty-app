@@ -26,15 +26,10 @@ async function fetchCharacters() {
 
       const characters = result.results;
       console.log(characters);
-
+      cardContainer.innerHTML = "";
       characters.forEach((character) => {
-        const name = character.name;
-        const status = character.status;
-        const type = character.type;
-        const occurences = character.episode.length;
-
-        const card = createCharacterCard(name, status, type, occurences);
-        cardContainer.appendChild(card);
+        const card = createCharacterCard(character);
+        cardContainer.append(card);
       });
     } else {
       console.log("fehler");

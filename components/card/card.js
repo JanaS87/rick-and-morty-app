@@ -1,11 +1,8 @@
-export async function createCharacterCard() {
-  const response = await fetch("https://rickandmortyapi.com/api/character");
-  const character = await response.json();
-
+export function createCharacterCard(character) {
   const newCard = document.createElement("li");
   newCard.classList.add("card");
   newCard.innerHTML = `
-  <li class="card">
+  
     <div class="card__image-container">
       <img
         class="card__image"
@@ -25,7 +22,7 @@ export async function createCharacterCard() {
         <dd class="card__info-description">${character.episode.length}</dd>
       </dl>
     </div>
-  </li>`;
+  `;
 
   return newCard;
 }
